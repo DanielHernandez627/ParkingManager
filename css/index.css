@@ -1,0 +1,12 @@
+body{
+    background-repeat: no-repeat;
+    background-color: azure;
+}
+
+.lista-categorias{
+    width: 250px;
+}
+
+#text_busqueda{
+    width: 250px;
+}
