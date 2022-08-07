@@ -1,0 +1,20 @@
+body{
+    background-repeat: no-repeat;
+    background-color: azure;
+}
+
+.lista-categorias{
+    width: 250px;
+}
+
+#text_busqueda{
+    width: 250px;
+}
+
+#confirmacion{
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+    color: red;
+}

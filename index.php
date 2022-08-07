@@ -7,6 +7,9 @@
     <title>Home</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/jquery-3.3.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="principal">
@@ -26,6 +29,9 @@
                         <li class="nav-item active">
                             <a class="nav-link" style="text-align: right;" href="index.php" >Inicio</a>
                         </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" style="text-align: right;" href="registro.php" >Registro</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -37,7 +43,7 @@
                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
                     <div class="input-group">
                         <div>
-                            <button type="button" class="btn btn-secondary">Nuevo</button>
+                            <a href="registro.php"><button type="button" class="btn btn-secondary">Nuevo</button></a>
                         </div>
                         <span>&nbsp;&nbsp;&nbsp;</span>
                         <div class="lista-categorias">
@@ -54,11 +60,19 @@
                         </div>
                         <span>&nbsp;&nbsp;&nbsp;</span>
                         <div>
-                            <input type="text" id="" class="form-control" placeholder="XDL627" aria-label="XDL627" aria-describedby="basic-addon1">
+                            <input name="matricula" type="text" id="" class="form-control" placeholder="XDL627" aria-label="XDL627" aria-describedby="basic-addon1">
                         </div>
                         <span>&nbsp;&nbsp;&nbsp;</span>
                         <div>
                             <button type="button" class="btn btn-info">Buscar</button>
+                        </div>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <div>
+                            Motos Disponibles: <span id="TMotos">10/0</span>
+                        </div>
+                        <span>&nbsp;&nbsp;&nbsp;</span>
+                        <div>
+                            Carros Disponibles: <span>10/0</span>
                         </div>
                     </div>
                 </div>
@@ -73,9 +87,10 @@
                         <thead class="thead-dark">
                             <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Placa</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Hora de Entrada</th>
+                            <th scope="col">Activo</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -84,23 +99,6 @@
                                 <td>Mark</td>
                                 <td>Otto</td>
                                 <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
                                 <td>@mdo</td>
                             </tr>
                             <tr>
@@ -108,17 +106,20 @@
                                 <td>Jacob</td>
                                 <td>Thornton</td>
                                 <td>@fat</td>
+                                <td>@mdo</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Larry</td>
                                 <td>the Bird</td>
                                 <td>@twitter</td>
+                                <td>@mdo</td>
                             </tr>
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
                                 <td>Otto</td>
+                                <td>@mdo</td>
                                 <td>@mdo</td>
                             </tr>
                             <tr>
@@ -126,17 +127,20 @@
                                 <td>Jacob</td>
                                 <td>Thornton</td>
                                 <td>@fat</td>
+                                <td>@mdo</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Larry</td>
                                 <td>the Bird</td>
                                 <td>@twitter</td>
+                                <td>@mdo</td>
                             </tr>
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
                                 <td>Otto</td>
+                                <td>@mdo</td>
                                 <td>@mdo</td>
                             </tr>
                             <tr>
@@ -144,12 +148,35 @@
                                 <td>Jacob</td>
                                 <td>Thornton</td>
                                 <td>@fat</td>
+                                <td>@mdo</td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
                                 <td>Larry</td>
                                 <td>the Bird</td>
                                 <td>@twitter</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td>@mdo</td>
                             </tr>
                         </tbody>
                     </table>
@@ -162,5 +189,8 @@
     <footer>
     <?php require 'footer.php';  ?>
     </footer>
+    <script type="js/bootstrap.min.js"></script>
+    <script type="js/jquery-3.3.1.slim.min.js"></script>
+    <script type="js/popper.min.js"></script>
 </body>
 </html>
