@@ -38,19 +38,19 @@
     });
 
     $(document).on('ready',function(){
-            $('#idEnviar').click(function(){
-                var url = "metodos/crear_nuevo_usuario.php";
-                $.ajax({                        
-                    type: "POST",                 
-                    url: url,                     
-                    data: $("#generador").serialize(), 
-                    success: function(data)             
-                    {
-                        $('#resp').html(data);               
-                    }
-                });
+        $('#idEnviar').click(function(){
+            var url = "metodos/crear_nuevo_usuario.php";
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: $("#generador").serialize(),
+                success: function(data)
+                {
+                    $('#resp').html(data);
+                }
             });
         });
+    });
 </script>
 <body>
     <div class="principal">
@@ -69,6 +69,9 @@
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" style="text-align: right;" href="index.php" >Inicio</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" style="text-align: right;" href="registro.php" >Registro</a>
                         </li>
                     </ul>
                 </div>

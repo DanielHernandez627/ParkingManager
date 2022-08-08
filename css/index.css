@@ -10,3 +10,7 @@ body{
 #text_busqueda{
     width: 250px;
 }
+
+.table{
+    text-align: center;
+}

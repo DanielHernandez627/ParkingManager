@@ -1,4 +1,5 @@
 <!--<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">-->
+<link rel="stylesheet" type="text/css" href="css/footer.css">
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
   <!-- Grid container -->
