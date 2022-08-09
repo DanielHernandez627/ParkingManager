@@ -14,7 +14,7 @@
 <script type="text/javascript">
     function search_init_table(){
         const url = "metodos/obtenerTabla.php";
-        const url2 = "metodos/obtenerCupos.php"
+        const url2 = "metodos/obtenerCupos.php";
 
         $.ajax({
             type: "POST",
@@ -38,8 +38,19 @@
     }
 
     function finalizar_tiempo(oID) {
-        var a1 = $("#placa"+oID).val();
-        console.log(a1);
+        const a1 = $("#placa" + oID).val();
+        const url3 = "metodos/obtenerTotales.php";
+
+        $('#placaF').val(a1);
+        $.ajax({
+            type: "POST",
+            url: url3,
+            data: $("#placa-finalizar").serialize(),
+            success: function(data)
+            {
+                $('#response').html(data);
+            }
+        });
     }
 
 </script>
@@ -78,26 +89,6 @@
                             <a href="registro.php"><button type="button" class="btn btn-secondary">Nuevo</button></a>
                         </div>
                         <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div class="lista-categorias">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <label class="input-group-text" for="inputGroupSelect01">Buscar</label>
-                                </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                    <option value="0" selected>Matricula</option>
-                                    <option value="1">Cedula</option>
-                                </select>
-                            </div>
-                        </div>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div>
-                            <input name="matricula" type="text" id="" class="form-control"  aria-describedby="basic-addon1">
-                        </div>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
-                        <div>
-                            <button type="button" class="btn btn-info">Buscar</button>
-                        </div>
-                        <span>&nbsp;&nbsp;&nbsp;</span>
                         <div id="cupos">
 
                         </div>
@@ -115,6 +106,14 @@
                     </div>
                 </div>
             </center>
+        </div>
+        <div id="response">
+
+        </div>
+        <div class="data-finalizar">
+            <form method="post" id="placa-finalizar">
+                <input style="display: none;" name="placa_finalizar" type="text" id="placaF">
+            </form>
         </div>
     </div>
     <br>

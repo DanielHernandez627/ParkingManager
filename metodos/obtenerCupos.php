@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_array($exe_query2)){
 ?>
 
 <div>
-    Motos Disponibles: <span id="TMotos"><?php echo $motos; ?>/10</span>
+    Motos Disponibles: <b><span id="TMotos"><?php echo $motos; ?>/10</span></b>
     &nbsp;&nbsp;&nbsp;
-    Carros Disponibles: <span id="TVehiculos"><?php echo $vehiculos; ?>/20</span>
+    Carros Disponibles: <b><span id="TVehiculos"><?php echo $vehiculos; ?>/20</span></b>
 </div>
